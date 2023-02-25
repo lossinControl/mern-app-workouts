@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: 'Josefin Sans', cursive;
+}
+
+.nav {
+  text-decoration: none;
+}
+.nav h1 {
+  color: white;
+}
+.nav-bar {
+  /* background: rgb(38, 30, 30); */
+  background: #000 linear-gradient(90deg, #121d22, #483d3d);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px 15px 0px;
+}
+.current-user {
+  display: flex;
+  flex-direction: row;
+}
+.email {
+  margin-right: 10px;
+}
+.logout-btn {
+  color: black;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+
+.workout-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  background: #000 linear-gradient(180deg, #213944,#0000);
+  padding: 50px;
+}
+.workout-form .form-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.workout-form input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+}
+.workout-form input:focus {
+  border-bottom: 3px solid white;
+}
+.workout-form button {
+  color: white;
+  background: black;
+  width: 100%;
+  padding: 15px;
+}
+.workout-list {
+  background: #000 linear-gradient(180deg,#0000,#213944);
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.h-sec {
+  margin-top: 40px;
+}
+.h-sec h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.del-btn {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  background: darkred;
+  padding: 5px 10px 0px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.edit-btn {
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+  background: lightblue;
+  padding: 5px 10px 0px 10px;
+  cursor: pointer;
+  color: black;
+  display: inline-block;
+}
+.error {
+  display: flex;
+  justify-content: center;
+}
+.error p {
+  position: absolute;
+  color: red;
+  font-weight: bold;
+}
+.edit-form-modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-form {
+  width: 600px;
+  height: 300px; 
+  background: #000 linear-gradient(180deg,#0000,#213944);
+  padding: 50px;
+  box-shadow: 5px 5px 5px 5px black;
+  overflow: auto;
+  animation: scaleModal 1s;
+  position: relative;
+}
+.edit-form input {
+  width: 100%;
+}
+.edit-form button {
+  width: 15%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background: white;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.cancel-btn {
+  width: 15%;
+  position: absolute;
+  bottom: 5.5%;
+  right: 20%;
+  background: darkred;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+@keyframes scaleModal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.login-signup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.login-signup h4 {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+/*===== LOGIN_PAGE_CSS ===== */
+.img-bg {
+  position: relative;
+  background-image: url(../public/images/saitama-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 87vh;
+}
+.bg-opacity {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.login-signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  margin-top: 20vh;
+  background: rgba( 0, 0, 0, 0.5);
+  padding: 50px; 
+}
+.login-signup-form h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.login-signup-form input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+}
+.login-signup-form button {
+  color: white;
+  background: black;
+  width: 100%;
+  padding: 10px;
+}
+.error-animate {
+  border: 2px solid red;
+  transition: 0.5s ease-in-out;
+  animation: errorAnimate 1s;
+}
+@keyframes errorAnimate {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(4px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(6px, 0, 0);
+  }
+}
+/*===== END_OF_LOGIN_PAGE_CSS ===== */
+
+/* LOGIN-SIGNUP-MEDIA_QUERIES */
+@media all and (max-width: 1400px) {
+  .login-signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    margin-top: 20vh;
+    background: rgba( 0, 0, 0, 0.5);
+    padding: 50px; 
+  }
+}
+@media all and (max-width: 1100px) {
+  .login-signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    margin-top: 20vh;
+    background: rgba( 0, 0, 0, 0.5);
+    padding: 50px; 
+  }
+}
+@media all and (max-width: 990px) {
+  .login-signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 20vh;
+    background: rgba( 0, 0, 0, 0.5);
+    padding: 50px; 
+  }
+}
+@media all and (max-width: 800px) {
+  .login-signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 20vh;
+    background: rgba( 0, 0, 0, 0.5);
+    padding: 50px; 
+  }
+}
+@media all and (max-width: 770px) {
+  .login-signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-top: 20vh;
+    background: rgba( 0, 0, 0, 0.5);
+    padding: 50px; 
+  }
+}
+/* END OF LOGIN-SIGNUP-MEDIA_QUERIES */
