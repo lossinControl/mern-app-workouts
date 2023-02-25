@@ -21,7 +21,7 @@ export const WorkoutForm = () => {
         } 
 
         const workout = {title, reps, load};
-        const res = await fetch('https://easy-lime-chick-slip.cyclic.app/api/workouts', {
+        const res = await fetch('https://shy-cyan-narwhal-shoe.cyclic.app/api/workouts', {
             method: 'POST',
             body: JSON.stringify(workout),
             headers: {

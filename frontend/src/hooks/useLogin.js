@@ -12,7 +12,7 @@ export const useLogin = () => {
         setIsLoading(true);
         setError(null);
 
-        const res = await fetch('https://easy-lime-chick-slip.cyclic.app/api/user/login', {
+        const res = await fetch('https://shy-cyan-narwhal-shoe.cyclic.app/api/user/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

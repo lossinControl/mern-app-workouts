@@ -15,7 +15,7 @@ export const Home = () => {
 
     useEffect(() => {
         const fetchWorkout = async () => {
-            const response = await fetch('https://easy-lime-chick-slip.cyclic.app/api/workouts', {
+            const response = await fetch('https://shy-cyan-narwhal-shoe.cyclic.app/api/workouts', {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }
@@ -37,7 +37,7 @@ export const Home = () => {
             return
         }
 
-        const response = await fetch(`https://easy-lime-chick-slip.cyclic.app/api/workouts/${id} `, {
+        const response = await fetch(`https://shy-cyan-narwhal-shoe.cyclic.app/api/workouts/${id} `, {
             method: 'DELETE',
             headers: {
                 "Authorization": `Bearer ${user.token}`
@@ -58,7 +58,7 @@ export const Home = () => {
         }
 
         const workout = {title: title};
-        const res = await fetch(`https://easy-lime-chick-slip.cyclic.app/api/workouts/${id}`, {
+        const res = await fetch(`https://shy-cyan-narwhal-shoe.cyclic.app/api/workouts/${id}`, {
             method: 'PATCH',
             body: JSON.stringify(workout),
             headers: {
