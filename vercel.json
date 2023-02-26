@@ -12,8 +12,8 @@
     ],
     "rewrites": [
         {
-          "source": "/(.*)",
-          "destination": "/backend/index.js"
+          "source": "/api/*",
+          "destination": "https://shy-cyan-narwhal-shoe.cyclic.app"
         }
       ]
     }
