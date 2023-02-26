@@ -47,7 +47,7 @@ export const Signup = () => {
 
                     <label>Email:</label>
                     <input 
-                        type="emial" onChange={(e) => setEmail(e.target.value)} 
+                        type="email" onChange={(e) => setEmail(e.target.value)} 
                         value={email} 
                     /> <br />
 

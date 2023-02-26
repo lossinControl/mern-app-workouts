@@ -87,7 +87,7 @@ export const Home = () => {
 
     return (
         <section className="h-sec">
-            <h2>HOME - Workouts</h2>
+            <h2>Workouts Lists</h2>
             {/* <h1>{newTitle}</h1> */}
             <div className="container">
                 <div className="row">
@@ -95,7 +95,7 @@ export const Home = () => {
                     {
                         workouts && workouts?.length ? workouts.map((Workout) => {
                         return (
-                            <div key={Workout._id} className="workout-list">
+                            <div key={Workout._id} className="workout-list workouts-animate">
                                 <h4>{Workout?.title}</h4>
                                 <h4>Load: {Workout?.load}</h4>
                                 <h4>Reps: {Workout?.reps}</h4>

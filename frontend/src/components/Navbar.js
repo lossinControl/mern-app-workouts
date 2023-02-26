@@ -20,8 +20,11 @@ export const Navbar = () => {
                 {
                     user ?
                         <div className="current-user">
+                            <Link to={'/workouts'} className="my-workouts">
+                                <p>My Workouts</p>
+                            </Link>
                             <div className="email">
-                                <p>{user?.email}</p>
+                                <p>Hi, {user?.email}</p>
                             </div>
                             <div>
                                 <button className="logout-btn" onClick={handleClick}>Logout</button>

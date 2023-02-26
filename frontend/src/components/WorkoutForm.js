@@ -11,9 +11,11 @@ export const WorkoutForm = () => {
     const [load, setLoad] = useState('');
     const [reps, setReps] = useState('');
     const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
         if (!user) {
             setError('You must be logged in.');
@@ -32,12 +34,14 @@ export const WorkoutForm = () => {
         const json = await res.json();
         if (!res.ok) {
             setError(json.mssg);
+            setIsLoading(false);
         }
         if (res.ok) {
             setTitle('');
             setLoad('');
             setReps('');
             setError(null);
+            setIsLoading(false);
             console.log('NEW WORKOUT ADDED!');
             dispatch({type: 'CREATE_WORKOUT', payload: json})
         }
@@ -48,7 +52,7 @@ export const WorkoutForm = () => {
             <form onSubmit={handleSubmit} className="workout-form">
                 <h3 className="form-title">Add a new Workout</h3>
 
-                <label>Excercise Title: </label> 
+                <label>Workout Title: </label> 
                 <input  
                     type="text" onChange={(e) => setTitle(e.target.value)} value={title}
                 /> <br />
@@ -65,7 +69,7 @@ export const WorkoutForm = () => {
 
                 <br /> <br />
 
-                <button>ADD WORKOUT</button>
+                <button disabled={isLoading}>ADD WORKOUT</button>
                 
                 {error && <div className="error">{error}</div> }
             </form>

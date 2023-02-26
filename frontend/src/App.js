@@ -10,6 +10,7 @@ import { Signup } from './pages/Signup';
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import { NotFound } from './pages/NotFound';
+import { Homepage } from './pages/Homepage';
 
 
 document.body.style.backgroundColor = 'black';
@@ -25,10 +26,11 @@ function App() {
       <Navbar />
         <div className='pages'>
           <Routes>
-            <Route path='/' element={ user ? <Home /> : <Navigate to='/login' /> } />
+            <Route path='/' element={ <Homepage /> } />
+            <Route path='/workouts' element={ user ? <Home /> : <Navigate to="/login" /> } />
             {/* <Route path='/users' element={<User />} /> */}
-            <Route path='/login' element={ !user ? <Login /> : <Navigate to="/" /> } />
-            <Route path='/signup' element={ !user ? <Signup /> : <Navigate to='/' /> } />
+            <Route path='/login' element={ !user ? <Login /> : <Navigate to="/workouts" /> } />
+            <Route path='/signup' element={ !user ? <Signup /> : <Navigate to='/workouts' /> } />
             <Route path='/image' element={<ImageUpload />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
