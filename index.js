@@ -11,7 +11,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: "https://mern-workouts.vercel.app/"
+  origin: "https://mern-workouts.vercel.app"
 }));
 
 // MIDDLEWARE
