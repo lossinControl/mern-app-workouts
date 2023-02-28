@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { WorkoutForm } from "../components/WorkoutForm";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
 
@@ -135,6 +136,8 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* FOOTER */}
+            <Footer />
         </section>
     );
 

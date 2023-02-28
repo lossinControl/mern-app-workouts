@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+    faArrowRight
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export const Section3 = () => {
@@ -25,6 +29,7 @@ export const Section3 = () => {
                             <div className="h-s-3-btn">
                                 <Link to={'/workouts'} className="get-started-btn">
                                     Get Started
+                                    <FontAwesomeIcon icon={faArrowRight} className="user-icon" />
                                 </Link>
                             </div>
                         </div>

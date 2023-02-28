@@ -20,13 +20,13 @@ const userSchema = new Schema({
 userSchema.statics.signup = async function(email, password) {
     // VALIDATION
     if (!email || !password) {
-        throw Error('All fiels must be filled!');
+        throw Error('All fields must be filled!');
     }
     if (!validator.isEmail(email)) {
-        throw Error('Email is not valid!');
+        throw Error('Invalid Email!');
     }
     if (!validator.isStrongPassword(password)) {
-        throw Error('Password is not strong enough!');
+        throw Error('Password must contain uppercase, lowercase, number & symbol.');
     }
 
     const exists = await this.findOne({email});
@@ -44,7 +44,7 @@ userSchema.statics.signup = async function(email, password) {
 // STATICS LOGIN METHOD
 userSchema.statics.login = async function(email, password) {
     if (!email || !password) {
-        throw Error('All fiels must be filled!');
+        throw Error('All fields must be filled!');
     }
     const user = await this.findOne({email});
     if (!user) {

@@ -11,7 +11,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: "https://mern-workouts.vercel.app"
+  origin: "http://localhost:3000"
 }));
 
 // MIDDLEWARE
@@ -50,18 +50,3 @@ app.use('/api/user' , userRoute);
 app.use((req, res) => {
     res.status(404).send('There is an error occured. 404 NOT FOUND!');
 });
-
-// static files (build of your frontend)
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../frontend', 'build')));
-//     app.get('/*', (req, res) => {
-//       res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
-//     })
-// }
-
-// USER ACCOUNT
-// {
-//     "email": "shin@example.com",
-//     "password": "This12345!"
-// }
-// SECOND USER = zet@example.com
