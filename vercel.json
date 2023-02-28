@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "./backend/index.js",
+        "src": "/backend/index.js",
         "use": "@vercel/node"
       },
       {
@@ -12,8 +12,8 @@
     ],
     "rewrites": [
         {
-          "source": "/(.*)",
-          "destination": "/index/server.js"
+          "source": "/api/*",
+          "destination": "https://shy-cyan-narwhal-shoe.cyclic.app"
         }
       ]
     }
