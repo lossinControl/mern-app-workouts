@@ -363,6 +363,9 @@ h1, h2, h3, h4, h5, h6, p, span {
   justify-content: center;
   align-items: center;
 }
+.login-btn {
+  text-decoration: none;
+}
 .login-btn h4 {
   position: relative;
 }
