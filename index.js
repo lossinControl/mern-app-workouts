@@ -11,7 +11,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: "http://localhost:3000"
+  origin: "https://mern-workouts.vercel.app"
 }));
 
 // MIDDLEWARE
